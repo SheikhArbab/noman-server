@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2021",
+      "dom"
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
