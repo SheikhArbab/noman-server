@@ -14,6 +14,13 @@ export interface SignUp extends SignIn {
 }
 
 
+export interface Project extends Document {
+    img: string;
+    title: string;
+    url: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
 
 
 export interface ValidUser {

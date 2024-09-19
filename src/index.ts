@@ -29,7 +29,7 @@ app.use(cors({ credentials: true, origin: true }));
 app.get("/", (req: Request, res: Response) => res.render('index', { website: process.env.ALLOW_ORIGIN }));
 app.use("/css", express.static("public/css"));
 app.use("/imgs", express.static("public/imgs"));
-app.use("/", express.static("public"), R.Auth);
+app.use("/", express.static("public"), R.Auth, R.Project);
 
 // Error handler middleware
 app.use(errorHandler);

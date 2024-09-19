@@ -26,6 +26,15 @@ export interface Auth extends Document {
 }
 
 
+export interface Project extends Document {
+    img: string;
+    title: string;
+    url: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+
 
 export interface Brand extends Document {
     title: string;
