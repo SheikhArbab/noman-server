@@ -21,18 +21,18 @@ export const buildSortByObject = (sort: string): { [key: string]: any } => {
 export function getCookiesOptions() {
     const expirationDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 day from now
 
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.NODE_ENV === 'development') {
+        return {
+            expires: expirationDate,
+            sameSite: 'strict' as const
+        };
+    } else {
         return {
             expires: expirationDate,
             // domain: '.vercel.app', // Update the domain to match your frontend domain
             secure: true,
             httpOnly: true,
             sameSite: 'none' as const
-        };
-    } else {
-        return {
-            expires: expirationDate,
-            sameSite: 'strict' as const
         };
     }
 }
