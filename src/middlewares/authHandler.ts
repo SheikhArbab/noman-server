@@ -10,15 +10,15 @@ interface ValidUserRes extends Request {
 
 // isAuthenticated middleware
 export const isAuthenticated = async (req: ValidUserRes, res: Response, next: NextFunction) => {
-    const { token } = req.cookies; 
-    
+    const { token } = req.cookies;
+
     if (!token) {
         return next(new Error("Please login to get access"));
     }
 
     try {
         const { payload } = jwt.verify(token, process.env.JWT_SECRET_KEY) as { payload: CT.ValidUser };
-        req.validUser = payload 
+        req.validUser = payload
         next();
     } catch (error) {
         return next(new Error("Invalid token. Please login again."));

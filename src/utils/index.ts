@@ -26,7 +26,7 @@ export function getCookiesOptions() {
             expires: expirationDate,
             // domain: '.vercel.app', // Update the domain to match your frontend domain
             secure: true,
-            // httpOnly: true,
+            httpOnly: true,
             sameSite: 'none' as const
         };
     } else {
